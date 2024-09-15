@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if lang == 'en' %}FAQ{% elif lang == 'tr' %}SSS{% else %}Вопросы{% endif %}</title>
+    <link rel="stylesheet" href="/static/css/faq.css">
+
+</head>
+<body class="{{ theme }}">
+    <nav>
+        <a href="{{ url_for('index', lang=lang) }}">{% if lang == 'en' %}Home{% elif lang == 'tr' %}Anasayfa{% else %}Главная{% endif %}</a>
+        <a href="{{ url_for('about', lang=lang) }}">{% if lang == 'en' %}About{% elif lang == 'tr' %}Hakkında{% else %}О нас{% endif %}</a>
+        <a href="{{ url_for('history', lang=lang) }}">{% if lang == 'en' %}History{% elif lang == 'tr' %}Tarihçe{% else %}История{% endif %}</a>
+        <a href="{{ url_for('products', lang=lang) }}">{% if lang == 'en' %}Products{% elif lang == 'tr' %}Ürünler{% else %}Продукты{% endif %}</a>
+        <a href="{{ url_for('form', lang=lang) }}">{% if lang == 'en' %}Survey{% elif lang == 'tr' %}Anket{% else %}Опрос{% endif %}</a>
+        <a href="{{ url_for('faq', lang=lang) }}">{% if lang == 'en' %}FAQ{% elif lang == 'tr' %}SSS{% else %}Вопросы{% endif %}</a>
+        <button class="language-button" data-lang="en"><img src="{{ url_for('static', filename='img/ingilizce.png') }}"></button>
+        <button class="language-button" data-lang="tr"><img src="{{ url_for('static', filename='img/türkçe (2).png') }}"></button>
+        <button class="language-button" data-lang="ru"><img src="{{ url_for('static', filename='img/rusça.png') }}"></button>
+    </nav>
+
+    <header>
+        <h1>{% if lang == 'en' %}Frequently Asked Questions{% elif lang == 'tr' %}Sıkça Sorulan Sorular{% else %}Часто задаваемые вопросы{% endif %}</h1>
+    </header>
+<center>
+    <div class="faq-item">
+        <h2>{% if lang == 'en' %}What is climate change?{% elif lang == 'tr' %}İklim değişikliği nedir?{% else %}Что такое изменение климата?{% endif %}</h2>
+        <p>{% if lang == 'en' %}Climate change refers to significant changes in global temperatures and weather patterns over time. While climate change is a natural phenomenon, scientific evidence shows that human activities are currently driving an unprecedented rate of change.{% elif lang == 'tr' %}İklim değişikliği, küresel sıcaklıklar ve hava koşullarındaki zaman içinde meydana gelen önemli değişikliklere atıfta bulunur. İklim değişikliği doğal bir olgu olmakla birlikte, bilimsel kanıtlar insan faaliyetlerinin şu anda eşi benzeri görülmemiş bir değişim hızına neden olduğunu göstermektedir.{% else %}Изменение климата относится к значительным изменениям глобальных температур и погодных условий с течением времени. Хотя изменение климата является естественным явлением, научные данные показывают, что деятельность человека в настоящее время вызывает беспрецедентный темп изменений.{% endif %}</p>
+    </div>
+    <!-- Existing questions are shortened for brevity in this example -->
+    <div class="faq-item">
+        <h2>{% if lang == 'en' %}What can individuals do to combat climate change?{% elif lang == 'tr' %}Bireyler iklim değişikliğiyle mücadele etmek için ne yapabilir?{% else %}Что могут сделать отдельные люди, чтобы бороться с изменением климата?{% endif %}</h2>
+        <p>{% if lang == 'en' %}Individuals can reduce their carbon footprint by using public transportation, reducing waste, recycling, using energy-efficient appliances, and supporting renewable energy projects.{% elif lang == 'tr' %}Bireyler, toplu taşıma kullanarak, atık azaltarak, geri dönüşüm yaparak, enerji verimli cihazlar kullanarak ve yenilenebilir enerji projelerini destekleyerek karbon ayak izlerini azaltabilirler.{% else %}Люди могут сократить свой углеродный след, используя общественный транспорт, уменьшая количество отходов, перерабатывая, используя энергоэффективную технику и поддерживая проекты по возобновляемой энергии.{% endif %}</p>
+    </div>
+    <div class="faq-item">
+        <h2>{% if lang == 'en' %}How does urbanization affect the environment?{% elif lang == 'tr' %}Kentselleşme çevreyi nasıl etkiler?{% else %}Как урбанизация влияет на окружающую среду?{% endif %}</h2>
+        <p>{% if lang == 'en' %}Urbanization can lead to increased pollution, loss of green spaces, and greater demand on natural resources. Managing urban growth sustainably is crucial to minimizing environmental impact.{% elif lang == 'tr' %}Kentselleşme, artan kirlilik, yeşil alanların kaybı ve doğal kaynaklara olan talebin artması gibi sonuçlara yol açabilir. Kentsel büyümeyi sürdürülebilir bir şekilde yönetmek, çevresel etkiyi en aza indirmek için hayati öneme sahiptir.{% else %}Урбанизация может привести к увеличению загрязнения, потере зеленых насаждений и увеличению спроса на природные ресурсы. Устойчивое управление городским ростом имеет решающее значение для минимизации воздействия на окружающую среду.{% endif %}</p>
+    </div>
+    <div class="faq-item">
+        <h2>{% if lang == 'en' %}What role do oceans play in climate regulation?{% elif lang == 'tr' %}Okyanuslar iklim düzenlemesinde hangi rolü oynar?{% else %}Какую роль океаны играют в регулировании климата?{% endif %}</h2>
+        <p>{% if lang == 'en' %}Oceans absorb large amounts of CO2, reducing greenhouse gases in the atmosphere and regulating global climate. They also affect weather patterns and support a diverse marine ecosystem.{% elif lang == 'tr' %}Okyanuslar büyük miktarda CO2 emer, atmosferdeki sera gazlarını azaltır ve küresel iklimi düzenler. Ayrıca hava koşullarını etkiler ve çeşitli bir deniz ekosistemini destekler.{% else %}Океаны поглощают большие количества CO2, снижая содержание парниковых газов в атмосфере и регулируя глобальный климат. Они также влияют на погодные условия и поддерживают разнообразную морскую экосистему.{% endif %}</p>
+    </div>
+    <div class="faq-item">
+        <h2>{% if lang == 'en' %}What is climate change?{% elif lang == 'tr' %}İklim değişikliği nedir?{% else %}Что такое изменение климата?{% endif %}</h2>
+        <p>{% if lang == 'en' %}Climate change refers to significant changes in global temperatures and weather patterns over time. While climate change is a natural phenomenon, scientific evidence shows that human activities are currently driving an unprecedented rate of change.{% elif lang == 'tr' %}İklim değişikliği, küresel sıcaklıklar ve hava koşullarındaki zaman içinde meydana gelen önemli değişikliklere atıfta bulunur. İklim değişikliği doğal bir olgu olmakla birlikte, bilimsel kanıtlar insan faaliyetlerinin şu anda eşi benzeri görülmemiş bir değişim hızına neden olduğunu göstermektedir.{% else %}Изменение климата относится к значительным изменениям глобальных температур и погодных условий с течением времени. Хотя изменение климата является естественным явлением, научные данные показывают, что деятельность человека в настоящее время вызывает беспрецедентный темп изменений.{% endif %}</p>
+    </div>
+    <div class="faq-item">
+        <h2>{% if lang == 'en' %}Why is environmental pollution a serious issue?{% elif lang == 'tr' %}Çevre kirliliği neden ciddi bir sorundur?{% else %}Почему загрязнение окружающей среды является серьезной проблемой?{% endif %}</h2>
+        <p>{% if lang == 'en' %}Environmental pollution occurs when harmful substances are released into the environment, causing damage to the natural world and human health. Pollution can affect air, water, and soil quality, leading to a wide range of health issues and ecosystem disruptions.{% elif lang == 'tr' %}Çevre kirliliği, zararlı maddelerin çevreye salınması ve doğal dünya ile insan sağlığına zarar vermesi durumunda meydana gelir. Kirlilik, hava, su ve toprak kalitesini etkileyebilir ve bu da çok çeşitli sağlık sorunlarına ve ekosistem bozulmalarına yol açabilir.{% else %}Загрязнение окружающей среды происходит, когда вредные вещества выбрасываются в окружающую среду, нанося ущерб природе и здоровью человека. Загрязнение может влиять на качество воздуха, воды и почвы, что приводит к широкому спектру проблем со здоровьем и нарушению экосистем.{% endif %}</p>
+    </div>
+    <div class="faq-item">
+        <h2>{% if lang == 'en' %}How does recycling help the environment?{% elif lang == 'tr' %}Geri dönüşüm çevreye nasıl yardımcı olur?{% else %}Как переработка помогает окружающей среде?{% endif %}</h2>
+        <p>{% if lang == 'en' %}Recycling helps to reduce waste in landfills, conserve natural resources, and reduce greenhouse gas emissions. By processing used materials into new products, recycling reduces the need to consume raw materials, helping to preserve the environment for future generations.{% elif lang == 'tr' %}Geri dönüşüm, çöplüklerdeki atıkları azaltmaya, doğal kaynakları korumaya ve sera gazı emisyonlarını azaltmaya yardımcı olur. Kullanılmış malzemeleri yeni ürünler haline getirerek geri dönüşüm, ham madde tüketim ihtiyacını azaltır ve gelecek nesiller için çevreyi korumaya yardımcı olur.{% else %}Переработка помогает уменьшить количество отходов на свалках, сохранить природные ресурсы и сократить выбросы парниковых газов. Переработка использованных материалов в новые продукты уменьшает потребность в сырье, помогая сохранить окружающую среду для будущих поколений.{% endif %}</p>
+    </div>
+    <div class="faq-item">
+        <h2>{% if lang == 'en' %}What are renewable energy sources?{% elif lang == 'tr' %}Yenilenebilir enerji kaynakları nelerdir?{% else %}Что такое возобновляемые источники энергии?{% endif %}</h2>
+        <p>{% if lang == 'en' %}Renewable energy sources include solar, wind, hydroelectric, and geothermal energy. These sources are considered renewable because they are naturally replenished and do not deplete the Earth's resources.{% elif lang == 'tr' %}Yenilenebilir enerji kaynakları, güneş, rüzgar, hidroelektrik ve jeotermal enerjiyi içerir. Bu kaynaklar, doğal olarak yenilendikleri ve Dünya'nın kaynaklarını tüketmedikleri için yenilenebilir olarak kabul edilir.{% else %}Возобновляемые источники энергии включают солнечную, ветровую, гидроэлектрическую и геотермальную энергию. Эти источники считаются возобновляемыми, потому что они естественным образом восполняются и не истощают ресурсы Земли.{% endif %}</p>
+    </div>
+    <div class="faq-item">
+        <h2>{% if lang == 'en' %}What are the effects of deforestation?{% elif lang == 'tr' %}Ormansızlaşmanın etkileri nelerdir?{% else %}Каковы последствия обезлесения?{% endif %}</h2>
+        <p>{% if lang == 'en' %}Deforestation leads to loss of habitat for millions of species, reduces biodiversity, and contributes to climate change. It also affects water cycles and soil fertility, which can lead to further environmental degradation.{% elif lang == 'tr' %}Ormansızlaşma, milyonlarca tür için yaşam alanının kaybına, biyoçeşitliliğin azalmasına ve iklim değişikliğine katkıda bulunur. Ayrıca, su döngülerini ve toprak verimliliğini etkiler, bu da daha fazla çevresel bozulmaya yol açabilir.{% else %}Обезлесение приводит к потере среды обитания миллионов видов, снижению биоразнообразия и способствует изменению климата. Это также влияет на водные циклы и плодородие почвы, что может привести к дальнейшему ухудшению окружающей среды.{% endif %}</p>
+    </div>
+
+</center>
+    
+    
+<footer>
+    <div class="social-media">
+        <a href="https://www.instagram.com"><img src="{{ url_for('static', filename='img/instagram.png') }}"></a>
+        <a href="https://www.facebook.com" ><img src="{{ url_for('static', filename='img/facebook.png') }}"></a>
+        <a href="https://www.youtube.com" ><img src="{{ url_for('static', filename='img/linkedin.png') }}"></a>
+        <a href="https://www.linkedin.com" ><img src="{{ url_for('static', filename='img/youtube.png') }}"></a>
+    </div>
+    <p>&copy; 2024 {% if lang == 'en' %}All Rights Reserved.{% elif lang == 'tr' %}Tüm Hakları Saklıdır.{% else %}Все права защищены.{% endif %}</p>
+</footer>
+
+   
+<button class="theme-toggle-button">
+    <div class="top">{% if lang == 'en' %}Dark Mode{% elif lang == 'tr' %}Karanlık Mod{% else %}Темный режим{% endif %}</div>
+    <div class="bottom">{% if lang == 'en' %}Light Mode{% elif lang == 'tr' %}Aydınlık Mod{% else %}Светлый режим{% endif %}</div>
+</button>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+/* Variables */
+$background-color: #e6f7ff;
+$primary-color: #007b7b;
+$secondary-color: #005959;
+$text-color: #333;
+$input-bg-color: #f5f5f5;
+$input-border-color: #ccc;
+$input-border-radius: 8px;
+$footer-bg-color: #333;
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+$border-radius: 12px;
+$font-size-base: 16px;
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $font-size-base;
+}
+
+.body {
+    font-family: 'Helvetica', sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.5s, color 0.5s;
+
+    &.body-light-tema {
+        background-color: #fafafa;
+        color: #333;
+    }
+
+    &.body-dark-tema {
+        background-color: #000000;
+        color: #ffffff;
+
+        /* Eğer '#ffffff00' yanlışsa, bunu '#ffffff' olarak güncelledim */
+    }
+}
+
+$dark-green: #056608;
+$light-green: #4CAf50;
+$hover-green: #033d02;
+$text-color: #fff;
+$link-padding: 5px 15px;
+$transition-effect: 0.3s;
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, $dark-green, $light-green);
+    padding: 10px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    width: 100%;
+
+    a {
+        color: $text-color;
+        text-decoration: none;
+        font-size: 1.2em;
+        padding: $link-padding;
+        border-radius: 5px;
+        transition: background-color $transition-effect, transform $transition-effect;
+
+        &:hover {
+            background-color: $hover-green;
+            transform: scale(1.1);
+        }
+    }
+
+    .language-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        img {
+            width: 20px;
+            height: 20px;
+            transition: transform $transition-effect;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+
+    .language-button {
+        margin-left: 15px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        img {
+            width: 25px;
+            height: auto;
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 40px;
+    background-color: $primary-color;
+    color: #fff;
+    border-radius: $border-radius;
+    box-shadow: 0 10px 20px $box-shadow-color;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+        animation: animateBackground 15s linear infinite;
+    }
+
+    h1 {
+        font-size: 3em;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@keyframes animateBackground {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: $border-radius;
+    box-shadow: 0 10px 20px $box-shadow-color;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
+        animation: animateBackground 15s linear infinite;
+    }
+
+    .input-box {
+        margin-bottom: 20px;
+        position: relative;
+        overflow: hidden;
+
+        label {
+            display: block;
+            font-size: 1.25em;
+            margin-bottom: 10px;
+            color: $primary-color;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid $input-border-color;
+            border-radius: $input-border-radius;
+            font-size: 1.1em;
+            transition: border-color 0.3s;
+            background: $input-bg-color;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+
+            &:focus {
+                border-color: $primary-color;
+                outline: none;
+                background: #fff;
+
+                + label {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+
+    .gender-box {
+        margin-bottom: 20px;
+
+        h3 {
+            font-size: 1.25em;
+            margin-bottom: 10px;
+            color: $primary-color;
+            text-transform: uppercase;
+        }
+
+        input {
+            margin-right: 10px;
+        }
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        background-color: $primary-color;
+        color: #fff;
+        border: none;
+        border-radius: $input-border-radius;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        box-shadow: 0 10px 20px $box-shadow-color;
+
+        &:hover {
+            background-color: $secondary-color;
+            transform: translateY(-3px);
+        }
+    }
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background-color: $footer-bg-color;
+    color: #fff;
+    margin-top: 50px;
+    border-radius: $border-radius;
+    box-shadow: 0 10px 20px $box-shadow-color;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+        animation: animateBackground 15s linear infinite;
+    }
+
+    p {
+        margin: 0;
+        font-size: 1.2em;
+        letter-spacing: 2px;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.theme-toggle-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1em;
+    width: 120px;
+    text-align: center;
+
+    &:hover {
+        background-color: #555;
+        transform: translateY(-3px);
+    }
+}
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* İkonlar arasındaki boşluk */
+    padding: 20px 0;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: #333;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 1.5em;
+        transition: background-color 0.3s, transform 0.3s;
+
+        &:hover {
+            background-color: #555;
+            transform: scale(1.1);
+        }
+    }
+
+    /* Sosyal medya ikonlarına özel renkler eklemek için */
+    a.instagram {
+        background-color: #E4405F;
+        &:hover {
+            background-color: #D73352;
+        }
+    }
+
+    a.facebook {
+        background-color: #1877F2;
+        &:hover {
+            background-color: #165DB2;
+        }
+    }
+
+    a.youtube {
+        background-color: #FF0000;
+        &:hover {
+            background-color: #CC0000;
+        }
+    }
+
+    a.linkedin {
+        background-color: #0077B5;
+        &:hover {
+            background-color: #005582;
+        }
+    }
+}

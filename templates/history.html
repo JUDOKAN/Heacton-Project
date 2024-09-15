@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if lang == 'en' %}History{% elif lang == 'tr' %}Tarihçe{% else %}История{% endif %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
+</head>
+<body class="{{ theme }}">
+    <nav>
+        <a href="{{ url_for('index', lang=lang) }}">{% if lang == 'en' %}Home{% elif lang == 'tr' %}Anasayfa{% else %}Главная{% endif %}</a>
+        <a href="{{ url_for('about', lang=lang) }}">{% if lang == 'en' %}About{% elif lang == 'tr' %}Hakkında{% else %}О нас{% endif %}</a>
+        <a href="{{ url_for('history', lang=lang) }}">{% if lang == 'en' %}History{% elif lang == 'tr' %}Tarihçe{% else %}История{% endif %}</a>
+        <a href="{{ url_for('products', lang=lang) }}">{% if lang == 'en' %}Products{% elif lang == 'tr' %}Ürünler{% else %}Продукты{% endif %}</a>
+        <a href="{{ url_for('form', lang=lang) }}">{% if lang == 'en' %}Survey{% elif lang == 'tr' %}Anket{% else %}Опрос{% endif %}</a>
+        <a href="{{ url_for('faq', lang=lang) }}">{% if lang == 'en' %}FAQ{% elif lang == 'tr' %}SSS{% else %}Вопросы{% endif %}</a>
+        <button class="language-button" data-lang="en"><img src="{{ url_for('static', filename='img/ingilizce.png') }}"></button>
+        <button class="language-button" data-lang="tr"><img src="{{ url_for('static', filename='img/türkçe (2).png') }}"></button>
+        <button class="language-button" data-lang="ru"><img src="{{ url_for('static', filename='img/rusça.png') }}"></button>
+    </nav>
+<center>
+    <header>
+        <h1>{% if lang == 'en' %}History of Climate Change{% elif lang == 'tr' %}İklim Değişikliği Tarihçesi{% else %}История изменения климата{% endif %}</h1>
+    </header>
+
+    <section>
+        <h2>{% if lang == 'en' %}Historical Overview{% elif lang == 'tr' %}Tarihsel Genel Bakış{% else %}Исторический обзор{% endif %}</h2>
+        <p>{% if lang == 'en' %}
+            Climate change has been a significant topic of scientific research and global concern for centuries. Early discussions date back to the 19th century, when scientists like Svante Arrhenius theorized the potential effects of carbon dioxide on Earth's atmosphere. However, it wasn't until the late 20th century that climate change became a critical issue in international policy debates. Today, global warming, rising sea levels, and extreme weather patterns are widely acknowledged consequences of human activity, driving the need for sustainable practices and urgent global action.
+        {% elif lang == 'tr' %}
+            İklim değişikliği, yüzyıllardır bilimsel araştırmaların ve küresel endişenin önemli bir konusu olmuştur. 19. yüzyıla kadar uzanan tartışmalar, Svante Arrhenius gibi bilim insanlarının karbondioksidin Dünya'nın atmosferi üzerindeki potansiyel etkilerini teorileştirmesiyle başlamıştır. Ancak, iklim değişikliği, 20. yüzyılın sonlarına doğru uluslararası politika tartışmalarında kritik bir konu haline gelmiştir. Bugün, küresel ısınma, deniz seviyelerinin yükselmesi ve aşırı hava olayları, insan faaliyetlerinin geniş çapta kabul gören sonuçlarıdır ve sürdürülebilir uygulamalara duyulan ihtiyaç ve acil küresel eylem çağrılarını tetiklemektedir.
+        {% else %}
+            Изменение климата стало важной темой научных исследований и глобальной озабоченности на протяжении веков. Первые обсуждения восходят к 19 веку, когда ученые, такие как Сванте Аррениус, выдвинули теории о возможных последствиях углекислого газа в атмосфере Земли. Однако только в конце 20 века изменение климата стало критическим вопросом в международных политических дебатах. Сегодня глобальное потепление, повышение уровня моря и экстремальные погодные явления широко признаются как следствия человеческой деятельности, что требует устойчивых решений и срочных глобальных действий.
+        {% endif %}</p>
+        <img src="/static/img/grafik.jpg" alt="{% if lang == 'en' %}Climate Change Chart{% elif lang == 'tr' %}İklim Değişikliği Grafiği{% else %}График изменения климата{% endif %}">
+    </section>
+</center>
+    
+
+<footer>
+    <div class="social-media">
+        <a href="https://www.instagram.com"><img src="{{ url_for('static', filename='img/instagram.png') }}"></a>
+        <a href="https://www.facebook.com" ><img src="{{ url_for('static', filename='img/facebook.png') }}"></a>
+        <a href="https://www.youtube.com" ><img src="{{ url_for('static', filename='img/linkedin.png') }}"></a>
+        <a href="https://www.linkedin.com" ><img src="{{ url_for('static', filename='img/youtube.png') }}"></a>
+    </div>
+    <p>&copy; 2024 {% if lang == 'en' %}All Rights Reserved.{% elif lang == 'tr' %}Tüm Hakları Saklıdır.{% else %}Все права защищены.{% endif %}</p>
+</footer>
+
+
+    <button class="theme-toggle-button">
+        <div class="top">{% if lang == 'en' %}Dark Mode{% elif lang == 'tr' %}Karanlık Mod{% else %}Темный режим{% endif %}</div>
+        <div class="bottom">{% if lang == 'en' %}Light Mode{% elif lang == 'tr' %}Aydınlık Mod{% else %}Светлый режим{% endif %}</div>
+    </button>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

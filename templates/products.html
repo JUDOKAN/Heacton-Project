@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if lang == 'en' %}Products{% elif lang == 'tr' %}Ürünler{% else %}Продукты{% endif %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+</head>
+<body class="{{ theme }}">
+    <nav>
+        <a href="{{ url_for('index', lang=lang) }}">{% if lang == 'en' %}Home{% elif lang == 'tr' %}Anasayfa{% else %}Главная{% endif %}</a>
+        <a href="{{ url_for('about', lang=lang) }}">{% if lang == 'en' %}About{% elif lang == 'tr' %}Hakkında{% else %}О нас{% endif %}</a>
+        <a href="{{ url_for('history', lang=lang) }}">{% if lang == 'en' %}History{% elif lang == 'tr' %}Tarihçe{% else %}История{% endif %}</a>
+        <a href="{{ url_for('products', lang=lang) }}">{% if lang == 'en' %}Products{% elif lang == 'tr' %}Ürünler{% else %}Продукты{% endif %}</a>
+        <a href="{{ url_for('form', lang=lang) }}">{% if lang == 'en' %}Survey{% elif lang == 'tr' %}Anket{% else %}Опрос{% endif %}</a>
+        <a href="{{ url_for('faq', lang=lang) }}">{% if lang == 'en' %}FAQ{% elif lang == 'tr' %}SSS{% else %}Вопросы{% endif %}</a>
+        <button class="language-button" data-lang="en"><img src="{{ url_for('static', filename='img/ingilizce.png') }}"></button>
+        <button class="language-button" data-lang="tr"><img src="{{ url_for('static', filename='img/türkçe (2).png') }}"></button>
+        <button class="language-button" data-lang="ru"><img src="{{ url_for('static', filename='img/rusça.png') }}"></button>
+    </nav>
+
+    <header>
+        <h1>{% if lang == 'en' %}Products and Their Environmental Impact{% elif lang == 'tr' %}Ürünler ve Çevresel Etkileri{% else %}Продукты и их воздействие на окружающую среду{% endif %}</h1>
+    </header>
+    <center>
+        <section>
+            <h2>{% if lang == 'en' %}Plastic{% elif lang == 'tr' %}Plastik{% else %}Пластик{% endif %}</h2>
+            <img src="{{ url_for('static', filename='img/plastik.jpg') }}" alt="Plastic">
+            <p>{% if lang == 'en' %}
+                Plastic is one of the most persistent pollutants on Earth, taking around 450 years to decompose. Plastic waste, particularly in oceans, harms marine life and disrupts ecosystems. Despite its durability and convenience, the environmental cost of plastic is severe, making recycling and reducing plastic use critical for a sustainable future.
+            {% elif lang == 'tr' %}
+                Plastik, Dünya üzerindeki en kalıcı kirleticilerden biridir ve çözülmesi yaklaşık 450 yıl sürer. Özellikle okyanuslardaki plastik atıklar, deniz yaşamına zarar verir ve ekosistemleri bozar. Dayanıklılığı ve pratikliğine rağmen, plastiğin çevresel maliyeti oldukça ağırdır; bu nedenle geri dönüşüm ve plastik kullanımını azaltma sürdürülebilir bir gelecek için kritik öneme sahiptir.
+            {% else %}
+                Пластик является одним из самых стойких загрязнителей на Земле, и для его разложения требуется около 450 лет. Пластиковые отходы, особенно в океанах, наносят вред морской жизни и нарушают экосистемы. Несмотря на его прочность и удобство, экологическая цена пластика велика, что делает переработку и сокращение использования пластика важными для устойчивого будущего.
+            {% endif %}</p>
+
+            <h2>{% if lang == 'en' %}Glass{% elif lang == 'tr' %}Cam{% else %}Стекло{% endif %}</h2>
+            <img src="{{ url_for('static', filename='img/cam.jpg') }}" alt="Glass">
+            <p>{% if lang == 'en' %}
+                Glass, unlike plastic, is recyclable but takes a long time to decompose if left in landfills. It can take up to a million years for glass to break down naturally, which makes its proper disposal and recycling essential. Despite its environmental impact, glass is a safer alternative to plastic in many applications due to its non-toxic nature.
+            {% elif lang == 'tr' %}
+                Cam, plastikten farklı olarak geri dönüştürülebilir ancak çöplüklere atıldığında çözülmesi uzun sürer. Camın doğal yollarla çözülmesi bir milyon yılı bulabilir, bu da doğru atık yönetimi ve geri dönüşümü önemli kılmaktadır. Toksik olmayan yapısı sayesinde cam, birçok uygulamada plastiğe daha güvenli bir alternatiftir.
+            {% else %}
+                В отличие от пластика, стекло поддается переработке, но для его разложения на свалках требуется много времени. Для разложения стекла естественным образом может потребоваться до миллиона лет, что делает его правильную утилизацию и переработку крайне важной. Несмотря на его воздействие на окружающую среду, стекло является более безопасной альтернативой пластику во многих областях благодаря своей нетоксичной природе.
+            {% endif %}</p>
+
+            <h2>{% if lang == 'en' %}Metal{% elif lang == 'tr' %}Metal{% else %}Металл{% endif %}</h2>
+            <img src="{{ url_for('static', filename='img/metal.jpg') }}" alt="Metal">
+            <p>{% if lang == 'en' %}
+                Metal, such as aluminum and steel, is highly recyclable and can be repurposed multiple times without losing quality. However, mining and extracting metals come at a significant environmental cost, causing deforestation, water pollution, and habitat destruction. Recycling metal products is crucial to reduce the need for new raw material extraction.
+            {% elif lang == 'tr' %}
+                Alüminyum ve çelik gibi metaller, yüksek oranda geri dönüştürülebilir ve kalitesini kaybetmeden defalarca kullanılabilir. Ancak, metal madenciliği ve çıkarımı, ormansızlaşma, su kirliliği ve yaşam alanlarının tahribi gibi önemli çevresel maliyetlere sahiptir. Metal ürünlerin geri dönüştürülmesi, yeni ham madde çıkarma ihtiyacını azaltmak için kritiktir.
+            {% else %}
+                Металлы, такие как алюминий и сталь, поддаются переработке и могут использоваться многократно без потери качества. Однако добыча металлов связана с большими экологическими затратами, включая вырубку лесов, загрязнение воды и уничтожение мест обитания. Переработка металлических изделий имеет решающее значение для снижения потребности в добыче новых сырьевых материалов.
+            {% endif %}</p>
+        </section>
+    </center>
+    <footer>
+        <div class="social-media">
+            <a href="https://www.instagram.com"><img src="{{ url_for('static', filename='img/instagram.png') }}"></a>
+            <a href="https://www.facebook.com" ><img src="{{ url_for('static', filename='img/facebook.png') }}"></a>
+            <a href="https://www.youtube.com" ><img src="{{ url_for('static', filename='img/linkedin.png') }}"></a>
+            <a href="https://www.linkedin.com" ><img src="{{ url_for('static', filename='img/youtube.png') }}"></a>
+        </div>
+        <p>&copy; 2024 {% if lang == 'en' %}All Rights Reserved.{% elif lang == 'tr' %}Tüm Hakları Saklıdır.{% else %}Все права защищены.{% endif %}</p>
+    </footer>
+
+    <button class="theme-toggle-button">
+        <div class="top">{% if lang == 'en' %}Dark Mode{% elif lang == 'tr' %}Karanlık Mod{% else %}Темный режим{% endif %}</div>
+        <div class="bottom">{% if lang == 'en' %}Light Mode{% elif lang == 'tr' %}Aydınlık Mod{% else %}Светлый режим{% endif %}</div>
+    </button>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
