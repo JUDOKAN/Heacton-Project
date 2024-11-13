@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if lang == 'en' %}FAQ{% elif lang == 'tr' %}SSS{% elif lang == 'ru' %}Вопросы{% else %}Häufig gestellte Fragen{% endif %}</title>
+    <link rel="stylesheet" href="/static/css/faq.css">
+    <nav>
+        <a href="{{ url_for('index', lang=lang) }}">{% if lang == 'en' %}Home{% elif lang == 'tr' %}Anasayfa{% elif lang == 'ru' %}Главная{% else %}Startseite{% endif %}</a>
+        <a href="{{ url_for('about', lang=lang) }}">{% if lang == 'en' %}About{% elif lang == 'tr' %}Hakkında{% elif lang == 'ru' %}О нас{% else %}Über uns{% endif %}</a>
+        <a href="{{ url_for('history', lang=lang) }}">{% if lang == 'en' %}History{% elif lang == 'tr' %}Tarihçe{% elif lang == 'ru' %}История{% else %}Geschichte{% endif %}</a>
+        <a href="{{ url_for('products', lang=lang) }}">{% if lang == 'en' %}Waste Products{% elif lang == 'tr' %}Atık Ürünler{% elif lang == 'ru' %}Отходы{% else %}Abfallprodukte{% endif %}</a>
+        <a href="{{ url_for('form', lang=lang) }}">{% if lang == 'en' %}Survey{% elif lang == 'tr' %}Anket{% elif lang == 'ru' %}Опрос{% else %}Umfrage{% endif %}</a>
+        <a href="{{ url_for('faq', lang=lang) }}">{% if lang == 'en' %}FAQ{% elif lang == 'tr' %}SSS{% elif lang == 'ru' %}Вопросы{% else %}FAQ{% endif %}</a>
+        <button class="language-button" data-lang="en"><img src="{{ url_for('static', filename='img/ingilizce.png') }}"></button>
+        <button class="language-button" data-lang="tr"><img src="{{ url_for('static', filename='img/türkçe (2).png') }}"></button>
+        <button class="language-button" data-lang="ru"><img src="{{ url_for('static', filename='img/rusça.png') }}"></button>
+        <button class="language-button" data-lang="de"><img src="{{ url_for('static', filename='img/almanca.png') }}"></button>
+    </nav>
+<header>
+        <h1>{% if lang == 'en' %}Frequently Asked Questions{% elif lang == 'tr' %}Sıkça Sorulan Sorular{% elif lang == 'ru' %}Часто задаваемые вопросы{% else %}Häufig gestellte Fragen{% endif %}</h1>
+    </header>
+    <!-- FAQ İçeriği -->
+    <center>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}What is climate change?{% elif lang == 'tr' %}İklim değişikliği nedir?{% elif lang == 'ru' %}Что такое изменение климата?{% else %}Was ist Klimawandel?{% endif %}</h2>
+            <p>{% if lang == 'en' %}Climate change refers to significant changes in global temperatures and weather patterns over time...{% elif lang == 'tr' %}İklim değişikliği, küresel sıcaklıklar ve hava koşullarındaki değişikliklere atıfta bulunur...{% elif lang == 'ru' %}Изменение климата относится к значительным изменениям глобальных температур...{% else %}Klimawandel bezieht sich auf signifikante Änderungen der globalen Temperaturen...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}What causes climate change?{% elif lang == 'tr' %}İklim değişikliğine ne sebep olur?{% elif lang == 'ru' %}Что вызывает изменение климата?{% else %}Was verursacht den Klimawandel?{% endif %}</h2>
+            <p>{% if lang == 'en' %}Climate change is primarily caused by greenhouse gases like carbon dioxide...{% elif lang == 'tr' %}İklim değişikliğinin ana sebebi, karbondioksit gibi sera gazlarıdır...{% elif lang == 'ru' %}Изменение климата в основном вызвано парниковыми газами...{% else %}Klimawandel wird hauptsächlich durch Treibhausgase wie Kohlendioxid verursacht...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}What are the effects of climate change?{% elif lang == 'tr' %}İklim değişikliğinin etkileri nelerdir?{% elif lang == 'ru' %}Каковы последствия изменения климата?{% else %}Was sind die Auswirkungen des Klimawandels?{% endif %}</h2>
+            <p>{% if lang == 'en' %}Effects include rising sea levels, extreme weather events, and biodiversity loss...{% elif lang == 'tr' %}Etkiler arasında deniz seviyesinin yükselmesi, aşırı hava olayları ve biyolojik çeşitliliğin azalması bulunmaktadır...{% elif lang == 'ru' %}Последствия включают повышение уровня моря, экстремальные погодные явления...{% else %}Zu den Auswirkungen gehören der Anstieg des Meeresspiegels...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}How can we mitigate climate change?{% elif lang == 'tr' %}İklim değişikliği nasıl azaltılabilir?{% elif lang == 'ru' %}Как можно смягчить изменение климата?{% else %}Wie können wir den Klimawandel mildern?{% endif %}</h2>
+            <p>{% if lang == 'en' %}We can mitigate climate change by reducing greenhouse gas emissions, using renewable energy...{% elif lang == 'tr' %}İklim değişikliği, sera gazı emisyonlarını azaltarak, yenilenebilir enerji kullanarak...{% elif lang == 'ru' %}Мы можем смягчить изменение климата, снизив выбросы парниковых газов...{% else %}Wir können den Klimawandel durch die Reduzierung von Treibhausgasemissionen...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}What are renewable energy sources?{% elif lang == 'tr' %}Yenilenebilir enerji kaynakları nelerdir?{% elif lang == 'ru' %}Что такое возобновляемые источники энергии?{% else %}Was sind erneuerbare Energiequellen?{% endif %}</h2>
+            <p>{% if lang == 'en' %}Renewable energy sources include solar, wind, hydro, and geothermal power...{% elif lang == 'tr' %}Yenilenebilir enerji kaynakları güneş, rüzgar, hidro ve jeotermal enerjiyi içerir...{% elif lang == 'ru' %}Возобновляемые источники энергии включают солнечную, ветровую...{% else %}Zu den erneuerbaren Energiequellen gehören Solar-, Wind-, Wasser- und Geothermie...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}How does climate change impact health?{% elif lang == 'tr' %}İklim değişikliği sağlığı nasıl etkiler?{% elif lang == 'ru' %}Как изменение климата влияет на здоровье?{% else %}Wie wirkt sich der Klimawandel auf die Gesundheit aus?{% endif %}</h2>
+            <p>{% if lang == 'en' %}Climate change affects health by increasing risks of respiratory illnesses, heatstroke...{% elif lang == 'tr' %}İklim değişikliği, solunum hastalıkları, sıcak çarpması risklerini artırarak sağlığı etkiler...{% elif lang == 'ru' %}Изменение климата влияет на здоровье, увеличивая риски респираторных заболеваний...{% else %}Der Klimawandel beeinflusst die Gesundheit, indem er das Risiko für Atemwegserkrankungen erhöht...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}What is carbon footprint?{% elif lang == 'tr' %}Karbon ayak izi nedir?{% elif lang == 'ru' %}Что такое углеродный след?{% else %}Was ist der CO₂-Fußabdruck?{% endif %}</h2>
+            <p>{% if lang == 'en' %}A carbon footprint is the total amount of greenhouse gases produced by our actions...{% elif lang == 'tr' %}Karbon ayak izi, eylemlerimiz sonucu üretilen toplam sera gazı miktarıdır...{% elif lang == 'ru' %}Углеродный след - это общее количество парниковых газов, производимых нашими действиями...{% else %}Der CO₂-Fußabdruck ist die Gesamtmenge der durch unsere Handlungen erzeugten Treibhausgase...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}Why is biodiversity important?{% elif lang == 'tr' %}Biyolojik çeşitlilik neden önemlidir?{% elif lang == 'ru' %}Почему важна биологическое разнообразие?{% else %}Warum ist Biodiversität wichtig?{% endif %}</h2>
+            <p>{% if lang == 'en' %}Biodiversity is essential for ecosystem stability, resilience, and resources for humans...{% elif lang == 'tr' %}Biyolojik çeşitlilik, ekosistem istikrarı, dayanıklılığı ve insanlara kaynak sağlamak için gereklidir...{% elif lang == 'ru' %}Биологическое разнообразие необходимо для стабильности и устойчивости экосистем...{% else %}Biodiversität ist wichtig für die Stabilität und Widerstandsfähigkeit von Ökosystemen...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}How does recycling help the environment?{% elif lang == 'tr' %}Geri dönüşüm çevreye nasıl yardımcı olur?{% elif lang == 'ru' %}Как переработка помогает окружающей среде?{% else %}Wie hilft Recycling der Umwelt?{% endif %}</h2>
+            <p>{% if lang == 'en' %}Recycling reduces waste, saves energy, and conserves natural resources...{% elif lang == 'tr' %}Geri dönüşüm, atıkları azaltır, enerji tasarrufu sağlar ve doğal kaynakları korur...{% elif lang == 'ru' %}Переработка уменьшает отходы, экономит энергию и сохраняет природные ресурсы...{% else %}Recycling reduziert Abfall, spart Energie und schont natürliche Ressourcen...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}What are the main sources of renewable energy?{% elif lang == 'tr' %}Yenilenebilir enerjinin ana kaynakları nelerdir?{% elif lang == 'ru' %}Каковы основные источники возобновляемой энергии?{% else %}Was sind die Hauptquellen erneuerbarer Energie?{% endif %}</h2>
+            <p>{% if lang == 'en' %}Main sources include solar, wind, hydro, biomass, and geothermal energy...{% elif lang == 'tr' %}Ana kaynaklar güneş, rüzgar, hidro, biyokütle ve jeotermal enerjiyi içerir...{% elif lang == 'ru' %}Основные источники включают солнечную, ветровую, гидроэнергию...{% else %}Hauptquellen sind Solar-, Wind-, Wasser-, Biomasse- und Geothermie-Energie...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}What is the greenhouse effect?{% elif lang == 'tr' %}Sera etkisi nedir?{% elif lang == 'ru' %}Что такое парниковый эффект?{% else %}Was ist der Treibhauseffekt?{% endif %}</h2>
+            <p>{% if lang == 'en' %}The greenhouse effect is the process by which greenhouse gases trap heat in the atmosphere...{% elif lang == 'tr' %}Sera etkisi, sera gazlarının atmosferde ısıyı tutması sürecidir...{% elif lang == 'ru' %}Парниковый эффект - это процесс, при котором парниковые газы удерживают тепло...{% else %}Der Treibhauseffekt ist der Prozess, durch den Treibhausgase Wärme in der Atmosphäre speichern...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}What are the primary greenhouse gases?{% elif lang == 'tr' %}Başlıca sera gazları nelerdir?{% elif lang == 'ru' %}Какие газы являются основными парниковыми?{% else %}Was sind die Haupttreibhausgase?{% endif %}</h2>
+            <p>{% if lang == 'en' %}The primary greenhouse gases include carbon dioxide, methane, nitrous oxide, and fluorinated gases...{% elif lang == 'tr' %}Başlıca sera gazları karbondioksit, metan, azot oksit ve florlu gazları içerir...{% elif lang == 'ru' %}Основные парниковые газы включают углекислый газ, метан, закись азота...{% else %}Die Haupttreibhausgase sind Kohlendioxid, Methan, Lachgas und fluorierte Gase...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}What is sustainable development?{% elif lang == 'tr' %}Sürdürülebilir kalkınma nedir?{% elif lang == 'ru' %}Что такое устойчивое развитие?{% else %}Was ist nachhaltige Entwicklung?{% endif %}</h2>
+            <p>{% if lang == 'en' %}Sustainable development is a method of growth that meets present needs without compromising future generations...{% elif lang == 'tr' %}Sürdürülebilir kalkınma, gelecek nesillerin ihtiyaçlarını riske atmadan mevcut ihtiyaçları karşılayan bir büyüme yöntemidir...{% elif lang == 'ru' %}Устойчивое развитие - это метод роста, удовлетворяющий текущие потребности, не ущемляя будущие поколения...{% else %}Nachhaltige Entwicklung ist eine Wachstumsstrategie, die aktuelle Bedürfnisse erfüllt, ohne die zukünftigen Generationen zu gefährden...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}How can individuals help reduce global warming?{% elif lang == 'tr' %}Bireyler küresel ısınmayı azaltmak için nasıl yardımcı olabilir?{% elif lang == 'ru' %}Как люди могут помочь уменьшить глобальное потепление?{% else %}Wie können Einzelpersonen zur Reduzierung der Erderwärmung beitragen?{% endif %}</h2>
+            <p>{% if lang == 'en' %}Individuals can help by reducing energy use, recycling, using public transportation, and supporting clean energy...{% elif lang == 'tr' %}Bireyler, enerji kullanımını azaltarak, geri dönüşüm yaparak, toplu taşıma kullanarak ve temiz enerjiyi destekleyerek yardımcı olabilir...{% elif lang == 'ru' %}Люди могут помочь, уменьшая потребление энергии, перерабатывая, используя общественный транспорт и поддерживая чистую энергию...{% else %}Einzelpersonen können helfen, indem sie den Energieverbrauch reduzieren, recyceln, öffentliche Verkehrsmittel nutzen und saubere Energie unterstützen...{% endif %}</p>
+        </div>
+        <div class="faq-item">
+            <h2>{% if lang == 'en' %}What are carbon offsets?{% elif lang == 'tr' %}Karbon denkleştirmeleri nedir?{% elif lang == 'ru' %}Что такое углеродные компенсации?{% else %}Was sind Kohlenstoffkompensationen?{% endif %}</h2>
+            <p>{% if lang == 'en' %}Carbon offsets are credits that individuals or companies can purchase to compensate for their carbon emissions...{% elif lang == 'tr' %}Karbon denkleştirmeleri, bireylerin veya şirketlerin karbon emisyonlarını telafi etmek için satın alabileceği kredilerdir...{% elif lang == 'ru' %}Углеродные компенсации - это кредиты, которые люди или компании могут приобрести, чтобы компенсировать свои выбросы углерода...{% else %}Kohlenstoffkompensationen sind Gutschriften, die Einzelpersonen oder Unternehmen kaufen können, um ihre Kohlenstoffemissionen auszugleichen...{% endif %}</p>
+        </div>
+    </center>
+    
+    <footer>
+        <div class="social-media">
+            <a href="https://www.instagram.com"><img src="{{ url_for('static', filename='img/instagram.png') }}"></a>
+            <a href="https://www.facebook.com"><img src="{{ url_for('static', filename='img/facebook.png') }}"></a>
+            <a href="https://www.youtube.com"><img src="{{ url_for('static', filename='img/youtube.png') }}"></a>
+            <a href="https://www.linkedin.com"><img src="{{ url_for('static', filename='img/linkedin.png') }}"></a>
+        </div>
+        <p>&copy; 2024 {% if lang == 'en' %}All Rights Reserved.{% elif lang == 'tr' %}Tüm Hakları Saklıdır.{% elif lang == 'ru' %}Все права защищены.{% else %}Alle Rechte vorbehalten.{% endif %}</p>
+    </footer>
+    <button class="theme-toggle-button">
+        <div class="top">{% if lang == 'en' %}Dark Mode{% elif lang == 'tr' %}Karanlık Mod{% elif lang == 'ru' %}Темный режим{% else %}Dunkler Modus{% endif %}</div>
+        <div class="bottom">{% if lang == 'en' %}Light Mode{% elif lang == 'tr' %}Aydınlık Mod{% elif lang == 'ru' %}Светлый режим{% else %}Heller Modus{% endif %}</div>
+    </button>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

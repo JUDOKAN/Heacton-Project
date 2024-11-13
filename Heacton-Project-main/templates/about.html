@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if lang == 'en' %}About{% elif lang == 'tr' %}Hakkında{% elif lang == 'ru' %}О нас{% else %}Über uns{% endif %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+<body class="{{ theme }}">
+<center>
+    <nav>
+        <a href="{{ url_for('index', lang=lang) }}">{% if lang == 'en' %}Home{% elif lang == 'tr' %}Anasayfa{% elif lang == 'ru' %}Главная{% else %}Startseite{% endif %}</a>
+        <a href="{{ url_for('about', lang=lang) }}">{% if lang == 'en' %}About{% elif lang == 'tr' %}Hakkında{% elif lang == 'ru' %}О нас{% else %}Über uns{% endif %}</a>
+        <a href="{{ url_for('history', lang=lang) }}">{% if lang == 'en' %}History{% elif lang == 'tr' %}Tarihçe{% elif lang == 'ru' %}История{% else %}Geschichte{% endif %}</a>
+        <a href="{{ url_for('products', lang=lang) }}">{% if lang == 'en' %}Waste Products{% elif lang == 'tr' %}Atık Ürünler{% elif lang == 'ru' %}Отходы{% else %}Abfallprodukte{% endif %}</a>
+        <a href="{{ url_for('form', lang=lang) }}">{% if lang == 'en' %}Survey{% elif lang == 'tr' %}Anket{% elif lang == 'ru' %}Опрос{% else %}Umfrage{% endif %}</a>
+        <a href="{{ url_for('faq', lang=lang) }}">{% if lang == 'en' %}FAQ{% elif lang == 'tr' %}SSS{% elif lang == 'ru' %}Вопросы{% else %}FAQ{% endif %}</a>
+        <button class="language-button" data-lang="en"><img src="{{ url_for('static', filename='img/ingilizce.png') }}"></button>
+        <button class="language-button" data-lang="tr"><img src="{{ url_for('static', filename='img/türkçe (2).png') }}"></button>
+        <button class="language-button" data-lang="ru"><img src="{{ url_for('static', filename='img/rusça.png') }}"></button>
+        <button class="language-button" data-lang="de"><img src="{{ url_for('static', filename='img/almanca.png') }}"></button>
+    </nav>
+</center>
+
+<header>
+    <h1>{% if lang == 'en' %}About Us{% elif lang == 'tr' %}Hakkımızda{% elif lang == 'ru' %}О нас{% else %}Über uns{% endif %}</h1>
+</header>
+
+<main>
+    <!-- Misyonumuz -->
+    <section>
+        <h2>{% if lang == 'en' %}Our Mission{% elif lang == 'tr' %}Misyonumuz{% elif lang == 'ru' %}Наша миссия{% else %}Unsere Mission{% endif %}</h2>
+        <p>{% if lang == 'en' %}
+            Heacton's mission is to lead the fight against environmental pollution and climate change. We develop innovative, sustainable solutions that protect the environment. Our aim is to minimize the negative impact on nature through efficient use of resources and promote eco-friendly practices. Heacton adds value to society and the planet by integrating environmentally responsible approaches into every project. We are committed to raising awareness and encouraging sustainable lifestyles globally.
+        {% elif lang == 'tr' %}
+            Heacton’un misyonu, çevre kirliliği ve iklim değişikliği ile mücadelede öncü çözümler üretmektir. Sürdürülebilir, yenilikçi çözümler geliştirerek doğayı koruyan projeler hayata geçiriyoruz. Doğal kaynakların verimli kullanımıyla doğaya olan olumsuz etkileri minimize etmeyi amaçlıyoruz. Heacton, çevre dostu uygulamalarla topluma ve gezegenimize değer katmayı hedeflemektedir. Küresel ölçekte sürdürülebilir yaşam tarzlarını teşvik ederek çevresel farkındalığı artırıyoruz.
+        {% elif lang == 'ru' %}
+            Миссия Heacton заключается в том, чтобы возглавить борьбу с загрязнением окружающей среды и изменением климата. Мы разрабатываем инновационные, устойчивые решения, которые защищают природу. Наша цель - минимизировать негативное воздействие на природу через эффективное использование ресурсов и продвижение экологически чистых практик. Heacton вносит вклад в общество и планету, используя экологически ответственный подход в каждом проекте. Мы привержены повышению осведомленности и поощрению устойчивых образов жизни по всему миру.
+        {% else %}
+            Die Mission von Heacton ist es, den Kampf gegen Umweltverschmutzung und Klimawandel anzuführen. Wir entwickeln innovative, nachhaltige Lösungen, die die Umwelt schützen. Unser Ziel ist es, die negativen Auswirkungen auf die Natur durch effiziente Ressourcennutzung zu minimieren und umweltfreundliche Praktiken zu fördern. Heacton trägt zur Gesellschaft und zum Planeten bei, indem es umweltverantwortliche Ansätze in jedes Projekt integriert. Wir sind bestrebt, das Bewusstsein zu schärfen und weltweit nachhaltige Lebensstile zu fördern.
+        {% endif %}</p>
+    </section>
+
+    <!-- Vizyonumuz -->
+    <section>
+        <h2>{% if lang == 'en' %}Our Vision{% elif lang == 'tr' %}Vizyonumuz{% elif lang == 'ru' %}Наше видение{% else %}Unsere Vision{% endif %}</h2>
+        <p>{% if lang == 'en' %}
+            Our vision at Heacton is to become the leading provider of eco-friendly technologies worldwide. We aim to provide innovative solutions that reduce environmental pollution and combat climate change on a global scale. We envision a future where sustainable products and services transform industries, accelerating the green revolution. By spreading environmental awareness, we aim to inspire a society where sustainability is central to daily life. Our goal is to build a cleaner, healthier planet for future generations.
+        {% elif lang == 'tr' %}
+            Heacton olarak vizyonumuz, dünya çapında çevreye duyarlı teknolojilerin lider sağlayıcısı olmaktır. Çevre kirliliğini azaltan ve iklim değişikliği ile mücadele eden yenilikçi çözümler sunmayı amaçlıyoruz. Sürdürülebilir ürün ve hizmetlerin endüstrileri dönüştürdüğü ve yeşil devrimi hızlandırdığı bir gelecek hayal ediyoruz. Çevresel farkındalığı yaygınlaştırarak, sürdürülebilirliğin günlük yaşamın merkezinde olduğu bir toplum inşa etmeyi hedefliyoruz. Gelecek nesillere daha temiz ve sağlıklı bir dünya bırakmak önceliğimizdir.
+        {% elif lang == 'ru' %}
+            Наша цель в Heacton - стать ведущим поставщиком экологически чистых технологий по всему миру. Мы стремимся предоставлять инновационные решения, которые сокращают загрязнение окружающей среды и борются с изменением климата в глобальном масштабе. Мы видим будущее, где устойчивые продукты и услуги преобразуют отрасли, ускоряя зеленую революцию. Распространяя экологическую осведомленность, мы стремимся вдохновить общество, где устойчивость занимает центральное место в повседневной жизни. Наша цель - построить более чистую и здоровую планету для будущих поколений.
+        {% else %}
+            Unsere Vision bei Heacton ist es, weltweit führender Anbieter umweltfreundlicher Technologien zu werden. Wir streben danach, innovative Lösungen anzubieten, die Umweltverschmutzung reduzieren und den Klimawandel weltweit bekämpfen. Wir stellen uns eine Zukunft vor, in der nachhaltige Produkte und Dienstleistungen Branchen transformieren und die grüne Revolution beschleunigen. Durch die Förderung des Umweltbewusstseins möchten wir eine Gesellschaft inspirieren, in der Nachhaltigkeit im Alltag zentral ist. Unser Ziel ist es, eine sauberere und gesündere Erde für kommende Generationen zu schaffen.
+        {% endif %}</p>
+    </section>
+</main>
+
+<footer>
+    <div class="social-media">
+        <a href="https://www.instagram.com"><img src="{{ url_for('static', filename='img/instagram.png') }}"></a>
+        <a href="https://www.facebook.com" ><img src="{{ url_for('static', filename='img/facebook.png') }}"></a>
+        <a href="https://www.youtube.com" ><img src="{{ url_for('static', filename='img/youtube.png') }}"></a>
+        <a href="https://www.linkedin.com" ><img src="{{ url_for('static', filename='img/linkedin.png') }}"></a>
+    </div>
+    <p>&copy; 2024 {% if lang == 'en' %}All Rights Reserved.{% elif lang == 'tr' %}Tüm Hakları Saklıdır.{% elif lang == 'ru' %}Все права защищены.{% else %}Alle Rechte vorbehalten.{% endif %}</p>
+</footer>
+  
+<button class="theme-toggle-button">
+    <div class="top">{% if lang == 'en' %}Dark Mode{% elif lang == 'tr' %}Karanlık Mod{% elif lang == 'ru' %}Темный режим{% else %}Dunkler Modus{% endif %}</div>
+    <div class="bottom">{% if lang == 'en' %}Light Mode{% elif lang == 'tr' %}Aydınlık Mod{% elif lang == 'ru' %}Светлый режим{% else %}Heller Modus{% endif %}</div>
+</button>
+    
+<script src="/static/js/script.js"></script>
+</body>
+</html>

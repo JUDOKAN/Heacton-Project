@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if lang == 'en' %}Survey{% elif lang == 'tr' %}Anket{% elif lang == 'ru' %}Опрос{% else %}Umfrage{% endif %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+</head>
+<body class="{{ theme }}">
+    <nav>
+        <a href="{{ url_for('index', lang=lang) }}">{% if lang == 'en' %}Home{% elif lang == 'tr' %}Anasayfa{% elif lang == 'ru' %}Главная{% else %}Startseite{% endif %}</a>
+        <a href="{{ url_for('about', lang=lang) }}">{% if lang == 'en' %}About{% elif lang == 'tr' %}Hakkında{% elif lang == 'ru' %}О нас{% else %}Über uns{% endif %}</a>
+        <a href="{{ url_for('history', lang=lang) }}">{% if lang == 'en' %}History{% elif lang == 'tr' %}Tarihçe{% elif lang == 'ru' %}История{% else %}Geschichte{% endif %}</a>
+        <a href="{{ url_for('products', lang=lang) }}">{% if lang == 'en' %}Waste Products{% elif lang == 'tr' %}Atık Ürünler{% elif lang == 'ru' %}Отходы{% else %}Abfallprodukte{% endif %}</a>
+        <a href="{{ url_for('form', lang=lang) }}">{% if lang == 'en' %}Survey{% elif lang == 'tr' %}Anket{% elif lang == 'ru' %}Опрос{% else %}Umfrage{% endif %}</a>
+        <a href="{{ url_for('faq', lang=lang) }}">{% if lang == 'en' %}FAQ{% elif lang == 'tr' %}SSS{% elif lang == 'ru' %}Вопросы{% else %}FAQ{% endif %}</a>
+        <button class="language-button" data-lang="en"><img src="{{ url_for('static', filename='img/ingilizce.png') }}"></button>
+        <button class="language-button" data-lang="tr"><img src="{{ url_for('static', filename='img/türkçe (2).png') }}"></button>
+        <button class="language-button" data-lang="ru"><img src="{{ url_for('static', filename='img/rusça.png') }}"></button>
+        <button class="language-button" data-lang="de"><img src="{{ url_for('static', filename='img/almanca.png') }}"></button>
+    </nav>
+    <center>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScGSXzBfSsM4WNP_Rqj4xFQBArTRxGfemUPDdBHZWLYEWbl-w/viewform?embedded=true" width="640" height="2402" frameborder="0" marginheight="0" marginwidth="0">
+            {% if lang == 'en' %}Loading...{% elif lang == 'tr' %}Yükleniyor…{% elif lang == 'ru' %}Загрузка...{% else %}Laden...{% endif %}
+        </iframe>
+    </center>
+    <footer>
+        <div class="social-media">
+            <a href="https://www.instagram.com"><img src="{{ url_for('static', filename='img/instagram.png') }}"></a>
+            <a href="https://www.facebook.com"><img src="{{ url_for('static', filename='img/facebook.png') }}"></a>
+            <a href="https://www.youtube.com"><img src="{{ url_for('static', filename='img/youtube.png') }}"></a>
+            <a href="https://www.linkedin.com"><img src="{{ url_for('static', filename='img/linkedin.png') }}"></a>
+        </div>
+        <p>&copy; 2024 {% if lang == 'en' %}All Rights Reserved.{% elif lang == 'tr' %}Tüm Hakları Saklıdır.{% elif lang == 'ru' %}Все права защищены.{% else %}Alle Rechte vorbehalten.{% endif %}</p>
+    </footer>
+    <button class="theme-toggle-button">
+        <div class="top">{% if lang == 'en' %}Dark Mode{% elif lang == 'tr' %}Karanlık Mod{% elif lang == 'ru' %}Темный режим{% else %}Dunkler Modus{% endif %}</div>
+        <div class="bottom">{% if lang == 'en' %}Light Mode{% elif lang == 'tr' %}Aydınlık Mod{% elif lang == 'ru' %}Светлый режим{% else %}Heller Modus{% endif %}</div>
+    </button>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

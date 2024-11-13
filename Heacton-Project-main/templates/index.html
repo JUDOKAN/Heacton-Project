@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if lang == 'en' %}Climate Change{% elif lang == 'tr' %}İklim Değişikliği{% elif lang == 'ru' %}Изменение климата{% else %}Klimawandel{% endif %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body class="{{ theme }}">
+<center>
+    <nav>
+        <a href="{{ url_for('index', lang=lang) }}">{% if lang == 'en' %}Home{% elif lang == 'tr' %}Anasayfa{% elif lang == 'ru' %}Главная{% else %}Startseite{% endif %}</a>
+        <a href="{{ url_for('about', lang=lang) }}">{% if lang == 'en' %}About{% elif lang == 'tr' %}Hakkında{% elif lang == 'ru' %}О нас{% else %}Über uns{% endif %}</a>
+        <a href="{{ url_for('history', lang=lang) }}">{% if lang == 'en' %}History{% elif lang == 'tr' %}Tarihçe{% elif lang == 'ru' %}История{% else %}Geschichte{% endif %}</a>
+        <a href="{{ url_for('products', lang=lang) }}">{% if lang == 'en' %}Waste Products{% elif lang == 'tr' %}Atık Ürünler{% elif lang == 'ru' %}Отходы{% else %}Abfallprodukte{% endif %}</a>
+        <a href="{{ url_for('form', lang=lang) }}">{% if lang == 'en' %}Survey{% elif lang == 'tr' %}Anket{% elif lang == 'ru' %}Опрос{% else %}Umfrage{% endif %}</a>
+        <a href="{{ url_for('faq', lang=lang) }}">{% if lang == 'en' %}FAQ{% elif lang == 'tr' %}SSS{% elif lang == 'ru' %}Вопросы{% else %}FAQ{% endif %}</a>
+        <button class="language-button" data-lang="en"><img src="{{ url_for('static', filename='img/ingilizce.png') }}"></button>
+        <button class="language-button" data-lang="tr"><img src="{{ url_for('static', filename='img/türkçe (2).png') }}"></button>
+        <button class="language-button" data-lang="ru"><img src="{{ url_for('static', filename='img/rusça.png') }}"></button>
+        <button class="language-button" data-lang="de"><img src="{{ url_for('static', filename='img/almanca.png') }}"></button>
+    </nav>
+</center>
+<center>
+    <header>
+        <h1>{% if lang == 'en' %}Climate Change and Environmental Pollution{% elif lang == 'tr' %}İklim Değişikliği ve Çevre Kirliliği{% elif lang == 'ru' %}Изменение климата и загрязнение окружающей среды{% else %}Klimawandel und Umweltverschmutzung{% endif %}</h1>
+        <p>{% if lang == 'en' %}Climate change is causing global temperatures to rise due to the increase in greenhouse gases...{% elif lang == 'tr' %}İklim değişikliği, sera gazlarının artışı nedeniyle dünya genelinde sıcaklıkların yükselmesine neden oluyor...{% elif lang == 'ru' %}Изменение климата вызывает повышение глобальных температур из-за увеличения парниковых газов...{% else %}Der Klimawandel lässt die globalen Temperaturen aufgrund des Anstiegs der Treibhausgase steigen...{% endif %}</p>
+    </header>
+    <section class="video-control-index">
+        <h2>{% if lang == 'en' %}Climate Change{% elif lang == 'tr' %}İklim Değişikliği{% elif lang == 'ru' %}Изменение климата{% else %}Klimawandel{% endif %}</h2>
+        <p>{% if lang == 'en' %}The accumulation of greenhouse gases in the atmosphere is causing the average temperature of the Earth's surface to rise...{% elif lang == 'tr' %}Atmosferdeki sera gazı birikimi nedeniyle dünya yüzeyinin ortalama sıcaklığı artmaktadır...{% elif lang == 'ru' %}Накопление парниковых газов в атмосфере вызывает повышение средней температуры поверхности Земли...{% else %}Die Ansammlung von Treibhausgasen in der Atmosphäre führt dazu, dass die durchschnittliche Temperatur der Erdoberfläche steigt...{% endif %}</p>
+        <video width="640" height="360" controls loop>
+            <source src="static/video/Heacton-Project-Sunumu.mp4" type="video/mp4">
+            {% if lang == 'en' %}Your browser does not support the video tag.{% elif lang == 'tr' %}Tarayıcınız video oynatmayı desteklemiyor.{% elif lang == 'ru' %}Ваш браузер не поддерживает видео тег.{% else %}Ihr Browser unterstützt das Video-Tag nicht.{% endif %}
+        </video>
+    </section>
+</center>
+<div class="social-media">
+    <a href="https://www.instagram.com"><img src="{{ url_for('static', filename='img/instagram.png') }}"></a>
+    <a href="https://www.facebook.com"><img src="{{ url_for('static', filename='img/facebook.png') }}"></a>
+    <a href="https://www.youtube.com"><img src="{{ url_for('static', filename='img/youtube.png') }}"></a>
+    <a href="https://www.linkedin.com"><img src="{{ url_for('static', filename='img/linkedin.png') }}"></a>
+</div>
+<p>&copy; 2024 {% if lang == 'en' %}All Rights Reserved.{% elif lang == 'tr' %}Tüm Hakları Saklıdır.{% elif lang == 'ru' %}Все права защищены.{% else %}Alle Rechte vorbehalten.{% endif %}</p>
+</footer>
+<button class="theme-toggle-button">
+<div class="top">{% if lang == 'en' %}Dark Mode{% elif lang == 'tr' %}Karanlık Moda Geç{% elif lang == 'ru' %}Темный режим{% else %}Dunkler Modus{% endif %}</div>
+<div class="bottom">{% if lang == 'en' %}Light Mode{% elif lang == 'tr' %}Aydınlık Moda Geç{% elif lang == 'ru' %}Светлый режим{% else %}Heller Modus{% endif %}</div>
+</button>
+<script src="/static/js/script.js"></script>
+</body>
+</html>

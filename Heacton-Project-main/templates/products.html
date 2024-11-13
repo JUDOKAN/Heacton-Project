@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if lang == 'en' %}Waste Products{% elif lang == 'tr' %}Atık Ürünler{% elif lang == 'ru' %}Отходы{% else %}Abfallprodukte{% endif %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+</head>
+<body class="{{ theme }}">
+    <nav>
+        <a href="{{ url_for('index', lang=lang) }}">{% if lang == 'en' %}Home{% elif lang == 'tr' %}Anasayfa{% elif lang == 'ru' %}Главная{% else %}Startseite{% endif %}</a>
+        <a href="{{ url_for('about', lang=lang) }}">{% if lang == 'en' %}About{% elif lang == 'tr' %}Hakkında{% elif lang == 'ru' %}О нас{% else %}Über uns{% endif %}</a>
+        <a href="{{ url_for('history', lang=lang) }}">{% if lang == 'en' %}History{% elif lang == 'tr' %}Tarihçe{% elif lang == 'ru' %}История{% else %}Geschichte{% endif %}</a>
+        <a href="{{ url_for('products', lang=lang) }}">{% if lang == 'en' %}Waste Products{% elif lang == 'tr' %}Atık Ürünler{% elif lang == 'ru' %}Отходы{% else %}Abfallprodukte{% endif %}</a>
+        <a href="{{ url_for('form', lang=lang) }}">{% if lang == 'en' %}Survey{% elif lang == 'tr' %}Anket{% elif lang == 'ru' %}Опрос{% else %}Umfrage{% endif %}</a>
+        <a href="{{ url_for('faq', lang=lang) }}">{% if lang == 'en' %}FAQ{% elif lang == 'tr' %}SSS{% elif lang == 'ru' %}Вопросы{% else %}FAQ{% endif %}</a>
+        <button class="language-button" data-lang="en"><img src="{{ url_for('static', filename='img/ingilizce.png') }}"></button>
+        <button class="language-button" data-lang="tr"><img src="{{ url_for('static', filename='img/türkçe (2).png') }}"></button>
+        <button class="language-button" data-lang="ru"><img src="{{ url_for('static', filename='img/rusça.png') }}"></button>
+        <button class="language-button" data-lang="de"><img src="{{ url_for('static', filename='img/almanca.png') }}"></button>
+    </nav>
+    <header>
+        <h1>{% if lang == 'en' %}Products and Their Environmental Impact{% elif lang == 'tr' %}Atık ürünler ve Çevresel Etkileri{% elif lang == 'ru' %}Продукты и их воздействие на окружающую среду{% else %}Produkte und ihre Umweltauswirkungen{% endif %}</h1>
+    </header>
+    <center>
+        
+                <!-- Yağ -->
+                <section>
+                    <h2>{% if lang == 'en' %}Oil{% elif lang == 'tr' %}Yağ{% elif lang == 'ru' %}Масло{% else %}Öl{% endif %}</h2>
+                    <img src="{{ url_for('static', filename='img/yag.jpg') }}" alt="Oil">
+                    <p>{% if lang == 'en' %}
+                        Oil, when improperly disposed of, can cause severe environmental damage by contaminating soil and water sources. One liter of oil can pollute up to a million liters of water, making it unsuitable for consumption by humans and wildlife. Used cooking oils, motor oils, and industrial oils, if not recycled or treated correctly, contribute to significant ecological problems. Recycling or responsibly disposing of oil not only protects natural resources but also reduces the overall environmental footprint.
+                    {% elif lang == 'tr' %}
+                        Yağ, yanlış şekilde atıldığında, toprak ve su kaynaklarını kirleterek ciddi çevresel zararlara neden olabilir. Bir litre yağ, bir milyon litre suyu kirletebilir ve bu suyu insanlar ve yaban hayatı için içilmez hale getirebilir. Kullanılmış yemeklik yağlar, motor yağları ve endüstriyel yağlar doğru bir şekilde geri dönüştürülmez veya imha edilmezse, önemli ekolojik sorunlara katkıda bulunur. Yağın geri dönüştürülmesi veya sorumlu bir şekilde bertaraf edilmesi, doğal kaynakları korurken çevresel ayak izini de azaltır.
+                    {% elif lang == 'ru' %}
+                        Масло, если его неправильно утилизировать, может нанести серьезный ущерб окружающей среде, загрязняя почву и водные источники. Один литр масла может загрязнить до миллиона литров воды, делая ее непригодной для потребления людьми и дикой природой. Использованные кулинарные масла, моторные масла и промышленные масла, если их не переработать или не утилизировать должным образом, способствуют значительным экологическим проблемам. Переработка или ответственная утилизация масла не только защищает природные ресурсы, но и снижает общий экологический след.
+                    {% else %}
+                        Öl kann bei unsachgemäßer Entsorgung erheblichen Umweltschäden verursachen, indem es Boden und Wasserquellen kontaminiert. Ein Liter Öl kann bis zu eine Million Liter Wasser verunreinigen und es für den menschlichen und tierischen Konsum ungeeignet machen. Verwendete Speiseöle, Motoröle und Industrieöle tragen, wenn sie nicht ordnungsgemäß recycelt oder behandelt werden, erheblich zu ökologischen Problemen bei. Recycling oder verantwortungsbewusste Entsorgung von Öl schützt nicht nur natürliche Ressourcen, sondern reduziert auch den ökologischen Fußabdruck insgesamt.
+                    {% endif %}</p>
+                </section>
+        
+                <!-- Odun -->
+                <section>
+                    <h2>{% if lang == 'en' %}Wood{% elif lang == 'tr' %}Odun{% elif lang == 'ru' %}Дерево{% else %}Holz{% endif %}</h2>
+                    <img src="{{ url_for('static', filename='img/odun.jpg') }}" alt="Wood">
+                    <p>{% if lang == 'en' %}
+                        Wood is a renewable resource that has been used for thousands of years for building, fuel, and paper production. However, unsustainable logging practices contribute to deforestation, loss of biodiversity, and climate change. Sustainable forest management ensures that trees are harvested responsibly and forests are allowed to regenerate. By promoting sustainable wood products, we can reduce the impact on natural habitats and maintain ecological balance.
+                    {% elif lang == 'tr' %}
+                        Odun, binlerce yıldır inşaat, yakıt ve kağıt üretimi için kullanılan yenilenebilir bir kaynaktır. Ancak sürdürülebilir olmayan ağaç kesimi uygulamaları, ormansızlaşma, biyolojik çeşitlilik kaybı ve iklim değişikliğine katkıda bulunur. Sürdürülebilir orman yönetimi, ağaçların sorumlu bir şekilde kesilmesini ve ormanların yeniden büyümesine izin verilmesini sağlar. Sürdürülebilir odun ürünlerini teşvik ederek doğal yaşam alanları üzerindeki etkileri azaltabilir ve ekolojik dengeyi koruyabiliriz.
+                    {% elif lang == 'ru' %}
+                        Древесина является возобновляемым ресурсом, который используется на протяжении тысячелетий для строительства, топлива и производства бумаги. Однако неустойчивые методы заготовки древесины способствуют обезлесению, утрате биоразнообразия и изменению климата. Устойчивое управление лесами гарантирует, что деревья заготавливаются ответственно, и лесам дается возможность восстанавливаться. Поддерживая устойчивую древесину, мы можем снизить влияние на природные места обитания и поддерживать экологический баланс.
+                    {% else %}
+                        Holz ist eine erneuerbare Ressource, die seit Tausenden von Jahren für Bau, Brennstoff und Papierproduktion verwendet wird. Doch nicht nachhaltige Abholzungspraktiken tragen zur Abholzung, zum Verlust der biologischen Vielfalt und zum Klimawandel bei. Nachhaltige Forstwirtschaft stellt sicher, dass Bäume verantwortungsbewusst geerntet werden und Wälder sich regenerieren können. Durch die Förderung nachhaltiger Holzprodukte können wir die Auswirkungen auf natürliche Lebensräume verringern und das ökologische Gleichgewicht erhalten.
+                    {% endif %}</p>
+                </section>
+        
+                <!-- Kağıt -->
+                <section>
+                    <h2>{% if lang == 'en' %}Paper{% elif lang == 'tr' %}Kağıt{% elif lang == 'ru' %}Бумага{% else %}Papier{% endif %}</h2>
+                    <img src="{{ url_for('static', filename='img/kagit.jpg') }}" alt="Paper">
+                    <p>{% if lang == 'en' %}
+                        Paper production is a resource-intensive process that involves large amounts of water, energy, and trees. Deforestation for paper production leads to habitat destruction, carbon emissions, and loss of biodiversity. Recycling paper reduces the demand for raw materials and minimizes the environmental impact. By using recycled paper and reducing paper consumption, we can contribute to a more sustainable future.
+                    {% elif lang == 'tr' %}
+                        Kağıt üretimi, büyük miktarda su, enerji ve ağaç gerektiren kaynak yoğun bir süreçtir. Kağıt üretimi için yapılan ormansızlaşma, habitat tahribatına, karbon salınımına ve biyolojik çeşitlilik kaybına yol açar. Kağıdın geri dönüştürülmesi, ham madde talebini azaltır ve çevresel etkiyi minimize eder. Geri dönüştürülmüş kağıt kullanarak ve kağıt tüketimini azaltarak, daha sürdürülebilir bir geleceğe katkıda bulunabiliriz.
+                    {% elif lang == 'ru' %}
+                        Производство бумаги - это ресурсозатратный процесс, требующий большого количества воды, энергии и деревьев. Обезлесение для производства бумаги приводит к разрушению среды обитания, выбросам углекислого газа и утрате биоразнообразия. Переработка бумаги снижает потребность в сырье и минимизирует воздействие на окружающую среду. Используя переработанную бумагу и уменьшая ее потребление, мы можем способствовать более устойчивому будущему.
+                    {% else %}
+                        Die Papierproduktion ist ein ressourcenintensiver Prozess, der große Mengen an Wasser, Energie und Bäumen erfordert. Die Abholzung für die Papierproduktion führt zur Zerstörung von Lebensräumen, zu Kohlendioxidemissionen und zum Verlust der biologischen Vielfalt. Das Recycling von Papier reduziert die Nachfrage nach Rohstoffen und minimiert die Umweltauswirkungen. Durch die Verwendung von Recyclingpapier und die Reduzierung des Papierverbrauchs können wir zu einer nachhaltigeren Zukunft beitragen.
+                    {% endif %}</p>
+                </section>
+        
+                <!-- Pil -->
+                <section>
+                    <h2>{% if lang == 'en' %}Battery{% elif lang == 'tr' %}Pil{% elif lang == 'ru' %}Батарея{% else %}Batterie{% endif %}</h2>
+                    <img src="{{ url_for('static', filename='img/pil.jpg') }}" alt="Battery">
+                    <p>{% if lang == 'en' %}
+                        Batteries contain heavy metals and toxic chemicals that can cause soil and water pollution when not disposed of properly. They are essential for modern technology, but without recycling, they contribute to a growing environmental hazard. Recycling batteries not only recovers valuable materials but also reduces the release of harmful substances. Responsible disposal of batteries ensures that these toxins do not enter our ecosystems.
+                    {% elif lang == 'tr' %}
+                        Piller, doğru şekilde atılmadığında toprak ve su kirliliğine neden olabilecek ağır metaller ve toksik kimyasallar içerir. Modern teknoloji için gerekli olsa da, geri dönüştürülmeden atıldıklarında büyüyen bir çevre tehlikesine katkıda bulunurlar. Pillerin geri dönüştürülmesi, değerli materyallerin geri kazanılmasını sağlarken zararlı maddelerin salınımını da azaltır. Pillerin sorumlu bir şekilde atılması, bu toksinlerin ekosistemimize girmesini önler.
+                    {% elif lang == 'ru' %}
+                        Батарейки содержат тяжелые металлы и токсичные химикаты, которые могут вызвать загрязнение почвы и воды, если их неправильно утилизировать. Они необходимы для современной техники, но без переработки они становятся растущей экологической угрозой. Переработка батареек не только позволяет восстановить ценные материалы, но и снижает выброс вредных веществ. Ответственная утилизация батареек гарантирует, что эти токсины не попадут в нашу экосистему.
+                    {% else %}
+                        Batterien enthalten Schwermetalle und giftige Chemikalien, die bei unsachgemäßer Entsorgung Boden- und Wasserverschmutzung verursachen können. Sie sind für moderne Technologie unverzichtbar, aber ohne Recycling tragen sie zu einer zunehmenden Umweltgefahr bei. Das Recycling von Batterien gewinnt wertvolle Materialien zurück und reduziert die Freisetzung schädlicher Substanzen. Die verantwortungsvolle Entsorgung von Batterien sorgt dafür, dass diese Toxine nicht in unsere Ökosysteme gelangen.
+                    {% endif %}</p>
+                </section>
+        
+                <!-- Metal -->
+                <section>
+                    <h2>{% if lang == 'en' %}Metal{% elif lang == 'tr' %}Metal{% elif lang == 'ru' %}Металл{% else %}Metall{% endif %}</h2>
+                    <img src="{{ url_for('static', filename='img/metal.jpg') }}" alt="Metal">
+                    <p>{% if lang == 'en' %}
+                        Metal recycling conserves natural resources and significantly reduces the environmental impact of mining and metal production. Extracting metals is an energy-intensive process that causes air and water pollution. Recycling metals such as aluminum and steel saves up to 90% of the energy required for primary production. Supporting metal recycling reduces waste and protects natural ecosystems from the invasive effects of mining.
+                    {% elif lang == 'tr' %}
+                        Metal geri dönüşümü, doğal kaynakları korur ve madencilik ve metal üretiminin çevresel etkisini önemli ölçüde azaltır. Metallerin çıkarılması enerji yoğun bir süreçtir ve hava ve su kirliliğine neden olur. Alüminyum ve çelik gibi metallerin geri dönüşümü, ilk üretim için gereken enerjinin %90'a kadarını tasarruf sağlar. Metal geri dönüşümünü desteklemek, atıkları azaltır ve madenciliğin zarar verici etkilerinden doğal ekosistemleri korur.
+                    {% elif lang == 'ru' %}
+                        Переработка металла сохраняет природные ресурсы и значительно снижает воздействие на окружающую среду при добыче и производстве металла. Добыча металлов - это энергоемкий процесс, вызывающий загрязнение воздуха и воды. Переработка таких металлов, как алюминий и сталь, экономит до 90% энергии, необходимой для первичного производства. Поддержка переработки металла сокращает количество отходов и защищает природные экосистемы от инвазивных последствий добычи полезных ископаемых.
+                    {% else %}
+                        Das Recycling von Metall schont natürliche Ressourcen und reduziert die Umweltauswirkungen von Bergbau und Metallproduktion erheblich. Der Abbau von Metallen ist ein energieintensiver Prozess, der Luft- und Wasserverschmutzung verursacht. Das Recycling von Metallen wie Aluminium und Stahl spart bis zu 90 % der für die Primärproduktion benötigten Energie. Die Unterstützung des Metallrecyclings reduziert Abfälle und schützt natürliche Ökosysteme vor den invasiven Auswirkungen des Bergbaus.
+                    {% endif %}</p>
+                </section>
+        
+                <!-- Cam -->
+                <section>
+                    <h2>{% if lang == 'en' %}Glass{% elif lang == 'tr' %}Cam{% elif lang == 'ru' %}Стекло{% else %}Glas{% endif %}</h2>
+                    <img src="{{ url_for('static', filename='img/cam.jpg') }}" alt="Glass">
+                    <p>{% if lang == 'en' %}
+                        Glass is a unique material that can be recycled indefinitely without losing its quality. Recycling glass saves energy, reduces landfill use, and decreases the need for raw materials. However, improper disposal of glass leads to waste and potential harm to wildlife. By recycling glass products, we can reduce greenhouse gas emissions and promote a circular economy.
+                    {% elif lang == 'tr' %}
+                        Cam, kalitesini kaybetmeden sonsuz kez geri dönüştürülebilen benzersiz bir malzemedir. Cam geri dönüşümü enerji tasarrufu sağlar, çöp sahalarının kullanımını azaltır ve ham madde ihtiyacını düşürür. Ancak camın yanlış atılması, atık oluşumuna ve yaban hayatına potansiyel zarar verir. Cam ürünlerinin geri dönüştürülmesi, sera gazı emisyonlarını azaltır ve döngüsel bir ekonomiyi destekler.
+                    {% elif lang == 'ru' %}
+                        Стекло - уникальный материал, который можно перерабатывать бесконечно, не теряя качества. Переработка стекла экономит энергию, уменьшает использование свалок и снижает потребность в сырье. Однако неправильная утилизация стекла приводит к образованию отходов и потенциальному ущербу для дикой природы. Переработка стеклянных изделий помогает сократить выбросы парниковых газов и поддерживать циркулярную экономику.
+                    {% else %}
+                        Glas ist ein einzigartiges Material, das unbegrenzt recycelt werden kann, ohne an Qualität zu verlieren. Das Recycling von Glas spart Energie, reduziert die Nutzung von Deponien und verringert den Bedarf an Rohstoffen. Eine unsachgemäße Entsorgung von Glas führt jedoch zu Abfällen und potenziellen Schäden für die Tierwelt. Durch das Recycling von Glasprodukten können wir Treibhausgasemissionen reduzieren und eine Kreislaufwirtschaft fördern.
+                    {% endif %}</p>
+                </section>
+        
+            </center>
+            <footer>
+                <div class="social-media">
+                    <a href="https://www.instagram.com"><img src="{{ url_for('static', filename='img/instagram.png') }}"></a>
+                    <a href="https://www.facebook.com"><img src="{{ url_for('static', filename='img/facebook.png') }}"></a>
+                    <a href="https://www.youtube.com"><img src="{{ url_for('static', filename='img/youtube.png') }}"></a>
+                    <a href="https://www.linkedin.com"><img src="{{ url_for('static', filename='img/linkedin.png') }}"></a>
+                </div>
+                <p>&copy; 2024 {% if lang == 'en' %}All Rights Reserved.{% elif lang == 'tr' %}Tüm Hakları Saklıdır.{% elif lang == 'ru' %}Все права защищены.{% else %}Alle Rechte vorbehalten.{% endif %}</p>
+            </footer>
+            <button class="theme-toggle-button">
+                <div class="top">{% if lang == 'en' %}Dark Mode{% elif lang == 'tr' %}Karanlık Mod{% elif lang == 'ru' %}Темный режим{% else %}Dunkler Modus{% endif %}</div>
+                <div class="bottom">{% if lang == 'en' %}Light Mode{% elif lang == 'tr' %}Aydınlık Mod{% elif lang == 'ru' %}Светлый режим{% else %}Heller Modus{% endif %}</div>
+            </button>
+            <script src="/static/js/script.js"></script>
+        </body>
+        </html>
+        
+

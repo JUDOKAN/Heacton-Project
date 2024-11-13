@@ -1,0 +1,8 @@
+Flask==2.0.3
+Flask-WTF==0.15.1
+WTForms==2.3.3
+Werkzeug==2.0.3
+Jinja2==3.0.3
+Flask-SQLAlchemy==2.5.1
+SQLAlchemy==1.4.27
+psycopg2-binary==2.9.3  # PostgreSQL için

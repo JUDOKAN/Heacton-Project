@@ -1,0 +1,282 @@
+/* Variables */
+$background-color: #f9f9f9;
+$primary-color: #1e90ff;
+$text-color: #333;
+$faq-item-bg-color: #fff;
+$footer-bg-color: #333;
+$faq-item-hover-shadow: rgba(0, 0, 0, 0.2);
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+$border-radius: 12px;
+$font-size-base: 16px;
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $font-size-base;
+}
+
+.body {
+    font-family: 'Helvetica', sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.5s, color 0.5s;
+
+    &.body-light-tema {
+        background-color: #fafafa;
+        color: #333;
+    }
+
+    &.body-dark-tema {
+        background-color: #000000;
+        color: #ffffff;
+
+        /* Eğer '#ffffff00' yanlışsa, bunu '#ffffff' olarak güncelledim */
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e8b57;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+    a {
+        margin: 0 10px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: color 0.3s, transform 0.3s;
+
+        &:hover {
+            color: #ffdd57;
+            transform: scale(1.1);
+        }
+    }
+
+    .language-button {
+        margin-left: 15px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        img {
+            width: 25px;
+            height: auto;
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header Styles */
+header {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    border-radius: $border-radius;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+        animation: animateBackground 15s linear infinite;
+    }
+
+    h1 {
+        font-size: 3em;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@keyframes animateBackground {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* FAQ Item Styles */
+.faq-item {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 25px;
+    background-color: $faq-item-bg-color;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px $box-shadow-color;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.05));
+        animation: animateBackground 15s linear infinite;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px $faq-item-hover-shadow;
+    }
+
+    h2 {
+        font-size: 2em;
+        color: $primary-color;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1.25em;
+        line-height: 1.8;
+        color: #555;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background-color: $footer-bg-color;
+    color: #fff;
+    margin-top: 50px;
+    border-radius: $border-radius;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+        animation: animateBackground 15s linear infinite;
+    }
+
+    p {
+        margin: 0;
+        font-size: 1.2em;
+        letter-spacing: 2px;
+        position: relative;
+        z-index: 1;
+    }
+}
+.theme-toggle-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1em;
+    width: 120px;
+    text-align: center;
+
+    &:hover {
+        background-color: #555;
+        transform: translateY(-3px);
+    }
+}
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* İkonlar arasındaki boşluk */
+    padding: 20px 0;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: #333;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 1.5em;
+        transition: background-color 0.3s, transform 0.3s;
+
+        &:hover {
+            background-color: #555;
+            transform: scale(1.1);
+        }
+    }
+
+    /* Sosyal medya ikonlarına özel renkler eklemek için */
+    a.instagram {
+        background-color: #E4405F;
+        &:hover {
+            background-color: #D73352;
+        }
+    }
+
+    a.facebook {
+        background-color: #1877F2;
+        &:hover {
+            background-color: #165DB2;
+        }
+    }
+
+    a.youtube {
+        background-color: #FF0000;
+        &:hover {
+            background-color: #CC0000;
+        }
+    }
+
+    a.linkedin {
+        background-color: #0077B5;
+        &:hover {
+            background-color: #005582;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if lang == 'en' %}History{% elif lang == 'tr' %}Tarihçe{% elif lang == 'ru' %}История{% else %}Geschichte{% endif %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
+</head>
+<body class="{{ theme }}">
+    <nav>
+        <a href="{{ url_for('index', lang=lang) }}">{% if lang == 'en' %}Home{% elif lang == 'tr' %}Anasayfa{% elif lang == 'ru' %}Главная{% else %}Startseite{% endif %}</a>
+        <a href="{{ url_for('about', lang=lang) }}">{% if lang == 'en' %}About{% elif lang == 'tr' %}Hakkında{% elif lang == 'ru' %}О нас{% else %}Über uns{% endif %}</a>
+        <a href="{{ url_for('history', lang=lang) }}">{% if lang == 'en' %}History{% elif lang == 'tr' %}Tarihçe{% elif lang == 'ru' %}История{% else %}Geschichte{% endif %}</a>
+        <a href="{{ url_for('products', lang=lang) }}">{% if lang == 'en' %}Waste Products{% elif lang == 'tr' %}Atık Ürünler{% elif lang == 'ru' %}Отходы{% else %}Abfallprodukte{% endif %}</a>
+        <a href="{{ url_for('form', lang=lang) }}">{% if lang == 'en' %}Survey{% elif lang == 'tr' %}Anket{% elif lang == 'ru' %}Опрос{% else %}Umfrage{% endif %}</a>
+        <a href="{{ url_for('faq', lang=lang) }}">{% if lang == 'en' %}FAQ{% elif lang == 'tr' %}SSS{% elif lang == 'ru' %}Вопросы{% else %}FAQ{% endif %}</a>
+        <button class="language-button" data-lang="en"><img src="{{ url_for('static', filename='img/ingilizce.png') }}"></button>
+        <button class="language-button" data-lang="tr"><img src="{{ url_for('static', filename='img/türkçe (2).png') }}"></button>
+        <button class="language-button" data-lang="ru"><img src="{{ url_for('static', filename='img/rusça.png') }}"></button>
+        <button class="language-button" data-lang="de"><img src="{{ url_for('static', filename='img/almanca.png') }}"></button>
+    </nav>
+    <header>
+        <h1>{% if lang == 'en' %}History of Climate Change{% elif lang == 'tr' %}İklim Değişikliği Tarihçesi{% elif lang == 'ru' %}История изменения климата{% else %}Geschichte des Klimawandels{% endif %}</h1>
+    </header>
+    <section>
+        <h2>{% if lang == 'en' %}Historical Overview{% elif lang == 'tr' %}Tarihsel Genel Bakış{% elif lang == 'ru' %}Исторический обзор{% else %}Historischer Überblick{% endif %}</h2>
+        <p>{% if lang == 'en' %}
+            The history of Heacton began with a mission to develop innovative solutions in the fight against environmental pollution and climate change. Founded with the goal of making a positive impact on the environment through sustainable technology and eco-friendly projects, Heacton aims to raise environmental awareness, promote efficient resource use, and encourage sustainable lifestyles. The project has undertaken various initiatives to address global environmental issues and continues to grow with a vision of becoming a leader in this field.
+        {% elif lang == 'tr' %}
+            Heacton’un tarihçesi, çevre kirliliği ve iklim değişikliği ile mücadelede yenilikçi çözümler geliştirmeye yönelik bir misyonla başlamıştır. Heacton, sürdürülebilir teknoloji ve doğa dostu projelerle çevreye olumlu katkılar sağlama amacıyla kurulmuştur. Proje, çevresel farkındalık oluşturmak, kaynakların verimli kullanımını teşvik etmek ve sürdürülebilir yaşam tarzlarını yaygınlaştırmak için çeşitli girişimlerde bulunmuştur. Heacton, global çapta çevresel sorunlara çözüm üretmek amacıyla her geçen gün büyümekte ve bu alanda öncü olma vizyonuyla ilerlemektedir.
+        {% elif lang == 'ru' %}
+            История Heacton началась с миссии по разработке инновационных решений в борьбе с загрязнением окружающей среды и изменением климата. Основанная с целью оказания положительного влияния на окружающую среду с помощью устойчивых технологий и экологически чистых проектов, Heacton стремится повысить экологическую осведомленность, способствовать эффективному использованию ресурсов и поддерживать устойчивый образ жизни. Проект реализовал различные инициативы для решения глобальных экологических проблем и продолжает развиваться с целью стать лидером в этой области.
+        {% else %}
+            Die Geschichte von Heacton begann mit der Mission, innovative Lösungen im Kampf gegen Umweltverschmutzung und Klimawandel zu entwickeln. Gegründet mit dem Ziel, durch nachhaltige Technologie und umweltfreundliche Projekte einen positiven Einfluss auf die Umwelt zu nehmen, setzt sich Heacton dafür ein, das Umweltbewusstsein zu schärfen, einen effizienten Ressourceneinsatz zu fördern und nachhaltige Lebensstile zu unterstützen. Das Projekt hat verschiedene Initiativen zur Lösung globaler Umweltprobleme ergriffen und wächst kontinuierlich mit der Vision, in diesem Bereich führend zu werden.
+        {% endif %}</p>
+        
+        <div class="social-media">
+            <a href="https://www.instagram.com"><img src="{{ url_for('static', filename='img/instagram.png') }}"></a>
+            <a href="https://www.facebook.com"><img src="{{ url_for('static', filename='img/facebook.png') }}"></a>
+            <a href="https://www.youtube.com"><img src="{{ url_for('static', filename='img/youtube.png') }}"></a>
+            <a href="https://www.linkedin.com"><img src="{{ url_for('static', filename='img/linkedin.png') }}"></a>
+        </div>
+        <p>&copy; 2024 {% if lang == 'en' %}All Rights Reserved.{% elif lang == 'tr' %}Tüm Hakları Saklıdır.{% elif lang == 'ru' %}Все права защищены.{% else %}Alle Rechte vorbehalten.{% endif %}</p>
+    </footer>
+    <button class="theme-toggle-button">
+        <div class="top">{% if lang == 'en' %}Dark Mode{% elif lang == 'tr' %}Karanlık Mod{% elif lang == 'ru' %}Темный режим{% else %}Dunkler Modus{% endif %}</div>
+        <div class="bottom">{% if lang == 'en' %}Light Mode{% elif lang == 'tr' %}Aydınlık Mod{% elif lang == 'ru' %}Светлый режим{% else %}Heller Modus{% endif %}</div>
+    </button>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
