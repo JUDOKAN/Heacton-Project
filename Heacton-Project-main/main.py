@@ -1,20 +1,12 @@
 from flask import Flask, render_template, request, jsonify, abort, session
 import os
-from flask_wtf import FlaskForm
-from wtforms import StringField, SelectField, DateField, RadioField, TextAreaField, SubmitField
-from wtforms.validators import DataRequired, Email, Length
-from flask_sqlalchemy import SQLAlchemy
 
-# Flask uygulamasını başlat
 app = Flask(__name__)
+app.secret_key = os.urandom(24)  # Rastgele bir secret key oluşturur
 
-# Dil seçimi için session kullanımı
 @app.before_request
 def set_language():
-    if 'lang' not in session:
-        session['lang'] = request.args.get('lang', default='tr')
-    else:
-        session['lang'] = request.args.get('lang', session['lang'])
+    session['lang'] = request.args.get('lang', default='tr')  # session kullanımı için secret_key gerekiyor
 
 # Anasayfa rotası
 @app.route('/', methods=['GET', 'POST'])
@@ -44,10 +36,10 @@ def products():
 # Anket formu sayfası
 @app.route('/form.html', methods=['GET', 'POST'])
 def form():
-    if form.validate_on_submit():
+    if request.method == 'POST':
         # Form verilerini işleyin
         return jsonify(message="Form başarıyla gönderildi!")
-    return render_template('form.html', form=form, lang=session.get('lang', 'tr'))
+    return render_template('form.html', lang=session.get('lang', 'tr'))
 
 # Uygulama çalıştırma
 if __name__ == '__main__':
