@@ -17,3 +17,6 @@ Form and Artificial Intelligence Link There is a form on our website where users
 In addition, an artificial intelligence link will also be included on our site for users who want to learn more about climate change. Through this link, you can ask your questions with an artificial intelligence-supported system and access detailed information.
 
 Contributing Those who want to contribute to this project can share their suggestions and development ideas with us. Everyone's contribution is important to raise awareness about climate change and build a more sustainable future.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/04c297fd-eb60-4bb5-9214-adebdfd8a1c2/deploy-status)](https://app.netlify.com/sites/heacton/deploys)
+
